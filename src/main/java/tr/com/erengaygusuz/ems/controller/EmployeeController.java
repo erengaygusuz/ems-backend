@@ -1,18 +1,18 @@
-package net.javaguides.ems.controller;
+package tr.com.erengaygusuz.ems.controller;
 
 import lombok.AllArgsConstructor;
-import net.javaguides.ems.dto.EmployeeDto;
-import net.javaguides.ems.service.EmployeeService;
+import tr.com.erengaygusuz.ems.dto.EmployeeDto;
+import tr.com.erengaygusuz.ems.service.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("*")
+@CrossOrigin(origins = {"http://localhost:3000", "https://ems1.erengaygusuz.com.tr", "https://ems2.erengaygusuz.com.tr"})
 @AllArgsConstructor
 @RestController
-@RequestMapping("/api/employees")
+@RequestMapping("/v1/employees")
 public class EmployeeController {
 
     private EmployeeService employeeService;

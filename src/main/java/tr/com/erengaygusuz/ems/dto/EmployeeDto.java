@@ -1,4 +1,4 @@
-package net.javaguides.ems.dto;
+package tr.com.erengaygusuz.ems.dto;
 
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;

@@ -1,12 +1,12 @@
-package net.javaguides.ems.service.impl;
+package tr.com.erengaygusuz.ems.service.impl;
 
 import lombok.AllArgsConstructor;
-import net.javaguides.ems.dto.EmployeeDto;
-import net.javaguides.ems.entity.Employee;
-import net.javaguides.ems.exception.ResourceNotFoundException;
-import net.javaguides.ems.mapper.EmployeeMapper;
-import net.javaguides.ems.repository.EmployeeRepository;
-import net.javaguides.ems.service.EmployeeService;
+import tr.com.erengaygusuz.ems.dto.EmployeeDto;
+import tr.com.erengaygusuz.ems.entity.Employee;
+import tr.com.erengaygusuz.ems.exception.ResourceNotFoundException;
+import tr.com.erengaygusuz.ems.mapper.EmployeeMapper;
+import tr.com.erengaygusuz.ems.repository.EmployeeRepository;
+import tr.com.erengaygusuz.ems.service.EmployeeService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
