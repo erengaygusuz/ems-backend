@@ -28,6 +28,8 @@
 * Using Best Practices such as Splitting Module to Packages like Mapping, Repositories, Services, Dtos, Controllers
 * Dockerizing Module and Pushing to Docker Hub
 * Running Docker Image as a Container at AWS EC2 Virtual Machine
+* Using AWS ALB Between AWS EC2 Instance and Frontend App
+* Using Hibernate as a ORM
 * Adding Custom Domain to Backend App
 * Adding SSL Certificate to Domain with AWS ACM
 
@@ -37,6 +39,7 @@ The list of all packages and tools used in this module is provided below, along 
 
 * Java 17
 * Java Spring Boot Framework 3.2.3
+* Hibernate
 * Lombok
 * Maven
 * Docker
