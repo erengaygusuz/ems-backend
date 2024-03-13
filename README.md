@@ -9,7 +9,7 @@
 * This repo contains the backend module of the project.
 
 * You can try the live version of the back end module at the following address:
-* Link: https://api-ems.erengaygusuz.com.tr/api/employees
+* Link: https://api-ems.erengaygusuz.com.tr/v1/employees
 
 ## Project Architecture
 
