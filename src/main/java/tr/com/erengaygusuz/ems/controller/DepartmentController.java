@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import tr.com.erengaygusuz.ems.dto.DepartmentDto;
 import tr.com.erengaygusuz.ems.service.DepartmentService;
 
+import java.util.List;
+
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/departments")
@@ -26,5 +28,12 @@ public class DepartmentController {
         DepartmentDto departmentDto = departmentService.getDepartmentById(departmentId);
 
         return ResponseEntity.ok(departmentDto);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<DepartmentDto>> getAllDepartments(){
+        List<DepartmentDto> departmentDtos = departmentService.getAllDepartments();
+
+        return ResponseEntity.ok(departmentDtos);
     }
 }
