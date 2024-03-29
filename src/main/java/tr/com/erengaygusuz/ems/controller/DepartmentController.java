@@ -9,6 +9,7 @@ import tr.com.erengaygusuz.ems.service.DepartmentService;
 
 import java.util.List;
 
+@CrossOrigin(origins = {"http://localhost:3000", "https://ems1.erengaygusuz.com.tr", "https://ems2.erengaygusuz.com.tr"})
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/departments")
