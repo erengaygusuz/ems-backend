@@ -2,9 +2,11 @@ package tr.com.erengaygusuz.ems.service.impl;
 
 import lombok.AllArgsConstructor;
 import tr.com.erengaygusuz.ems.dto.EmployeeDto;
+import tr.com.erengaygusuz.ems.entity.Department;
 import tr.com.erengaygusuz.ems.entity.Employee;
 import tr.com.erengaygusuz.ems.exception.ResourceNotFoundException;
 import tr.com.erengaygusuz.ems.mapper.EmployeeMapper;
+import tr.com.erengaygusuz.ems.repository.DepartmentRepository;
 import tr.com.erengaygusuz.ems.repository.EmployeeRepository;
 import tr.com.erengaygusuz.ems.service.EmployeeService;
 import org.springframework.stereotype.Service;
@@ -17,11 +19,14 @@ import java.util.stream.Collectors;
 public class EmployeeServiceImpl implements EmployeeService {
 
     private EmployeeRepository employeeRepository;
-
+    private DepartmentRepository departmentRepository;
     @Override
     public EmployeeDto createEmployee(EmployeeDto employeeDto) {
 
         Employee employee = EmployeeMapper.mapToEmployee(employeeDto);
+        Department department = departmentRepository.findById(employeeDto.getDepartmentId())
+                .orElseThrow(() -> new ResourceNotFoundException("Department is not exists with id: " + employeeDto.getDepartmentId()));
+        employee.setDepartment(department);
         Employee savedEmployee = employeeRepository.save(employee);
 
         return EmployeeMapper.mapToEmployeeDto(savedEmployee);
@@ -51,6 +56,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.setFirstName(employeeDto.getFirstName());
         employee.setLastName(employeeDto.getLastName());
         employee.setEmail(employeeDto.getEmail());
+
+        Department department = departmentRepository.findById(employeeDto.getDepartmentId())
+                .orElseThrow(() -> new ResourceNotFoundException("Department is not exists with id: " + employeeDto.getDepartmentId()));
+        employee.setDepartment(department);
 
         Employee updatedEmployee = employeeRepository.save(employee);
 

@@ -12,7 +12,7 @@ import java.util.List;
 @CrossOrigin(origins = {"http://localhost:3000", "https://ems1.erengaygusuz.com.tr", "https://ems2.erengaygusuz.com.tr"})
 @AllArgsConstructor
 @RestController
-@RequestMapping("/api/departments")
+@RequestMapping("/v1/departments")
 public class DepartmentController {
 
     private DepartmentService departmentService;
